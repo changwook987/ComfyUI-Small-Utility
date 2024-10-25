@@ -69,6 +69,8 @@ function sort(prompt) {
                 break;
         }
     }
+    buf = buf.trim();
+    if (buf) cur.push(buf);
     buf = cur.sort().join(", ");
     if (buf) buf += ", ";
     return buf;
