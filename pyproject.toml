@@ -1,0 +1,14 @@
+[project]
+name = "comfyui-small-utility"
+description = "Context menu extension for CLIPTextEncode (sort prompt), EmptyLatentImage (sdxl size selector)."
+version = "1.0.0"
+license = {file = "LICENSE"}
+
+[project.urls]
+Repository = "https://github.com/changwook987/ComfyUI-Small-Utility"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI-Small-Utility"
+Icon = ""
