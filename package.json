@@ -1,0 +1,33 @@
+{
+  "name": "comfyui-small-utility",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/changwook987/ComfyUI-Small-Utility.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/changwook987/ComfyUI-Small-Utility/issues"
+  },
+  "homepage": "https://github.com/changwook987/ComfyUI-Small-Utility#readme",
+  "dependencies": {
+    "@comfyorg/comfyui-frontend-types": "^1.7.13",
+    "@comfyorg/litegraph": "^0.8.60"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^5.2.1",
+    "@types/node": "^22.10.7",
+    "prettier": "^3.4.2",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.5"
+  }
+}
