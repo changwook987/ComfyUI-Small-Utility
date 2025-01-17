@@ -1,4 +1,4 @@
-from .py.random_sdxl import RandomEmptyLatent
+from .py.random_latent import RandomEmptyLatent
 from .py.evaluation import Eval
 
 WEB_DIRECTORY = "web"
