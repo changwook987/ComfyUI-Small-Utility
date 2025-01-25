@@ -20,14 +20,14 @@
   },
   "homepage": "https://github.com/changwook987/ComfyUI-Small-Utility#readme",
   "dependencies": {
-    "@comfyorg/comfyui-frontend-types": "^1.7.13",
-    "@comfyorg/litegraph": "^0.8.60"
+    "@comfyorg/comfyui-frontend-types": "^1.8.6",
+    "@comfyorg/litegraph": "^0.8.61"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^5.2.1",
-    "@types/node": "^22.10.7",
+    "@types/node": "^22.10.10",
     "prettier": "^3.4.2",
-    "typescript": "~5.6.2",
-    "vite": "^6.0.5"
+    "typescript": "^5.7.3",
+    "vite": "^6.0.11"
   }
 }

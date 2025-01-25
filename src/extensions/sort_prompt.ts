@@ -2,29 +2,30 @@ import { ComfyExtension } from "@comfyorg/comfyui-frontend-types";
 
 export const sortPrompt: ComfyExtension = {
   name: "smallutility.sort_prompt",
-  beforeRegisterNodeDef(nodeType, nodeData, _app) {
-    if (nodeData.name === "CLIPTextEncode") {
-      const getExtraMenuOptions = nodeType.prototype.getExtraMenuOptions;
+  beforeRegisterNodeDef(nodeType, _nodeData, _app) {
+    const getExtraMenuOptions = nodeType.prototype.getExtraMenuOptions;
 
-      nodeType.prototype.getExtraMenuOptions = function (canvas, options) {
-        getExtraMenuOptions?.apply(this, [canvas, options]);
+    nodeType.prototype.getExtraMenuOptions = function (canvas, options) {
+      getExtraMenuOptions?.apply(this, [canvas, options]);
 
-        options.push({
-          content: "sort prompt",
-          callback(_value, _options, _event, _previous_menu, node) {
-            const widget = node?.widgets?.[0];
-
-            try {
-              if (widget) widget.value = sort(widget.value as string);
-            } catch (e) {
-              window.alert("sorting failed");
+      options.push({
+        content: "sort prompt",
+        callback(_value, _options, _event, _previous_menu, node) {
+          node?.widgets?.forEach((widget) => {
+            if (typeof widget.value === "string"
+              && widget.type !== "combo") {
+              try {
+                if (widget) widget.value = sort(widget.value);
+              } catch (e: any) {
+                console.log(e);
+              }
             }
-          },
-        });
+          })
+        },
+      });
 
-        return options;
-      };
-    }
+      return options;
+    };
   },
 };
 
@@ -34,7 +35,7 @@ const sort = (prompt: string): string => {
   let cur: CurrentItem[] = [];
   let buf = "";
   let escape = false;
-  const stack = [];
+  const stack: CurrentItem[][] = [];
   for (const c of prompt) {
     switch (c) {
       case "(":

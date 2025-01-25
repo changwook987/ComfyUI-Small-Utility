@@ -2,7 +2,7 @@
 
 ## sort prompt
 
-Right click `CLIPTextEncode` node and click sort prompt
+Right click node and click sort prompt
 
 ## sdxl size selector
 
